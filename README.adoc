@@ -172,7 +172,17 @@ java com.craftinginterpreters.lox.Lox <プログラム>
 
 [source,console]
 ----
-ここに、Loxを実行したときのコマンドライン、その動作結果をテキストで貼り付ける。
+$ java com.craftinginterpreters.lox.Lox Parser.java
+Exception in thread "main" java.nio.file.NoSuchFileException: Parser.java
+        at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+        at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+        at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+        at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:236)
+        at java.base/java.nio.file.Files.newByteChannel(Files.java:380)
+        at java.base/java.nio.file.Files.newByteChannel(Files.java:432)
+        at java.base/java.nio.file.Files.readAllBytes(Files.java:3288)
+        at com.craftinginterpreters.lox.Lox.runFile(Lox.java:24)
+        at com.craftinginterpreters.lox.Lox.main(Lox.java:18)
 ----
 
 作成できたら、一度「lox01」をコミットしなさい。
